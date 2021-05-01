@@ -1,5 +1,5 @@
-# tree
+# Binary Tree
 
-There is nothing to see here... Switch to branch *version1* or *version2*.
+Lightweight implementation of *binary tree* data structure.
 
 ---
