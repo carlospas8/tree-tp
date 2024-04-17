@@ -160,7 +160,8 @@ int
 tree_height (const tree *t)
 {
   /* Conventionally, an empty tree has height −1. */
-  if (t == NULL) return -1;
+  if (t == NULL)
+    return -1;
   return MAX (tree_height (t->left) + 1, tree_height (t->right) + 1);
 }
 
@@ -228,6 +229,17 @@ tree_free_full (tree *t, void (*destroy) (void *))
     t->parent = NULL;
   destroy (t->data);
   free (t);
+}
+
+int
+tree_sum_int (tree *t)
+{
+  if (t == NULL)
+    return 0;
+  int *val = tree_value (t); // assuming the data is an integer
+  if (val == NULL)
+    return 0;
+  return *val + tree_sum_int (tree_left (t)) + tree_sum_int (tree_right (t));
 }
 
 /* *********************************************************** */

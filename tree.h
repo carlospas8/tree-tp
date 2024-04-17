@@ -37,4 +37,5 @@ void tree_unlink (tree *t);
 void tree_free (tree *t);
 void tree_free_full (tree *t, void (*destroy) (void *));
 
+int tree_sum_int (tree *t);
 #endif
